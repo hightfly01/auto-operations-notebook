@@ -9,4 +9,20 @@
     </url>
     
 
+    
+    <url>
+     <loc>/python/</loc>
+     <lastmod>2018-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/test/</loc>
+     <lastmod>2018-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
