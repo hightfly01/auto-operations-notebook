@@ -2,12 +2,12 @@
     "docs": [
         {
             "location": "/",
-            "text": "home",
+            "text": "home\n\n\nhttp://127.0.0.1:8000/",
             "title": "home"
         },
         {
             "location": "/#home",
-            "text": "",
+            "text": "http://127.0.0.1:8000/",
             "title": "home"
         },
         {
