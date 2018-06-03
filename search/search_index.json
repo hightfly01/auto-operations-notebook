@@ -29,6 +29,16 @@
             "location": "/test/#test",
             "text": "",
             "title": "test"
+        },
+        {
+            "location": "/mysql/base/",
+            "text": "mysql \u57fa\u7840",
+            "title": "mysql \u57fa\u7840"
+        },
+        {
+            "location": "/mysql/base/#mysql",
+            "text": "",
+            "title": "mysql \u57fa\u7840"
         }
     ]
 }
