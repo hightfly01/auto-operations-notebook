@@ -3,7 +3,7 @@
 
 ### SSH 探测流程
 
-![探测过程](探测过程.png)
+![探测过程](../asset/assets_scanning/探测过程.png)
 
 
 
@@ -30,4 +30,4 @@ print(ret)
 
 ### 总结
 
-![探测存活ip列表以及服务器主机](探测原理.png) 
+![探测存活ip列表以及服务器主机](../asset/assets_scanning/探测原理.png) 

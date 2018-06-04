@@ -1,10 +1,44 @@
-site_name: imoocc-project
-theme: readthedocs
+site_name: auto-operations
+
+# readthedocs
+theme:  material
+use_directory_urls: true
+
+docs_dir: 'docs'
+
+
 pages:
-  -  Assets scanning:
-      - nmap存活扫描: 'Assets scanning/nmap存活扫描.md'
-      - telnetlib端口扫描: 'Assets scanning/telnetlib端口扫描.md'
-      - 登录探测: 'Assets scanning/登录探测.md'
-  - Automated task:
-      - index-1: Automated task/index.md
-      - python-1: Automated task/python.md
+- 首页: 'index.md'
+- 资产探测:
+    - '资产探测-nmap': 'assets_scanning/nmap.md'
+    - '端口探测-telnetlib': 'assets_scanning/telnetlib.md'
+    - '登录探测': 'assets_scanning/login.md'
+- 自动化任务:
+    - '自动化-1': 'automated_task/python.md'
+
+
+
+# Repository
+repo_name: 'GitHub'
+repo_url: 'https://github.com/hightfly01/imoocc-notebook'
+
+
+# Copyright
+copyright: 'Copyright (c) 2018 hightfly'
+
+
+extra:
+  palette:
+    primary: 'blue grey'
+    accent: 'blue grey'
+  author:
+    github: 'hightfly01'
+
+
+# Extensions
+markdown_extensions:
+  #高亮
+  - codehilite(css_class=code)
+  - admonition
+  - toc:
+      permalink: '#'
