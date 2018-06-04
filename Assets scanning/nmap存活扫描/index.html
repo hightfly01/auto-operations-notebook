@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>mysql 基础 - imoocc-project</title>
+  <title>Nmap存活扫描 - imoocc-project</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "mysql \u57fa\u7840";
-    var mkdocs_page_input_path = "mysql/base.md";
-    var mkdocs_page_url = "/mysql/base/";
+    var mkdocs_page_name = "Nmap\u5b58\u6d3b\u626b\u63cf";
+    var mkdocs_page_input_path = "Assets scanning/nmap\u5b58\u6d3b\u626b\u63cf.md";
+    var mkdocs_page_url = "/Assets scanning/nmap\u5b58\u6d3b\u626b\u63cf/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> imoocc-project</a>
+        <a href="./" class="icon icon-home"> imoocc-project</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -49,32 +49,52 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../..">home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../python/">python</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../test/">test</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Mysql</span>
+    <span class="caption-text">Assets scanning</span>
     <ul class="subnav">
                 <li class=" current">
                     
-    <a class="current" href="./">mysql 基础</a>
+    <a class="current" href="./">Nmap存活扫描</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#mysql">mysql 基础</a></li>
+    <li class="toctree-l3"><a href="#_1">存活探索</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_2">探测协议</a></li>
+    
+
+    <li class="toctree-l3"><a href="#_3">探测模块和工具</a></li>
+    
+
+    <li class="toctree-l3"><a href="#nmap">nmap工具在系统环境中使用</a></li>
+    
+
+    <li class="toctree-l3"><a href="#python-nmappython">python-nmap在python环境的使用</a></li>
     
 
     </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../telnetlib端口扫描/">Telnetlib端口扫描</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../登录探测/">登录探测</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Automated task</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Automated task/">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Automated task/python/">Python</a>
                 </li>
     </ul>
 	    </li>
@@ -89,7 +109,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">imoocc-project</a>
+        <a href="./">imoocc-project</a>
       </nav>
 
       
@@ -97,15 +117,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
+    <li><a href="./">Docs</a> &raquo;</li>
     
       
         
-          <li>Mysql &raquo;</li>
+          <li>Assets scanning &raquo;</li>
         
       
     
-    <li>mysql 基础</li>
+    <li>Nmap存活扫描</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -115,7 +135,46 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mysql">mysql 基础</h1>
+                <h2 id="_1">存活探索</h2>
+<p>探测内部网络中的存活设备</p>
+<h2 id="_2">探测协议</h2>
+<p>首先了解一下，需要探测的协议：</p>
+<p><img alt="  探测协议" src="../探测协议.png" /></p>
+<h2 id="_3">探测模块和工具</h2>
+<p>nmap - 是一款用于网络发现和安全设计的让利安全工具</p>
+<p>nmap模块，在系统环境下的安装：</p>
+<pre><code>yum install nmap
+
+</code></pre>
+
+<p>nmap模块，在python环境下的安装：</p>
+<pre><code>pip install python-nmap
+
+</code></pre>
+
+<h2 id="nmap">nmap工具在系统环境中使用</h2>
+<pre><code>$ nmap -n -sP -PE 192.168.199.214
+</code></pre>
+
+<blockquote>
+<p>参数说明：</p>
+<p>-n : 不对目标机器的ip地址反解析</p>
+<p>-sP: icmp协议探测</p>
+<p>-PE: tcp协议探测</p>
+</blockquote>
+<h2 id="python-nmappython">python-nmap在python环境的使用</h2>
+<pre><code>
+import nmap
+
+nm = nmap.PortScanner()
+
+nm.scan(hosts='192.168.199.214', ports=None, arguments='-n -sP -PE')
+# 获取启用存活的主机列表
+ret = nm.all_hosts()
+
+print(ret)
+
+</code></pre>
               
             </div>
           </div>
@@ -123,8 +182,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../telnetlib端口扫描/" class="btn btn-neutral float-right" title="Telnetlib端口扫描">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../../test/" class="btn btn-neutral" title="test"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -150,8 +209,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../test/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+        <span style="margin-left: 15px"><a href="../telnetlib端口扫描/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

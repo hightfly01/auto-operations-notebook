@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+        
     <url>
-     <loc>/</loc>
-     <lastmod>2018-06-03</lastmod>
+     <loc>/Assets scanning/nmap存活扫描/</loc>
+     <lastmod>2018-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>/python/</loc>
-     <lastmod>2018-06-03</lastmod>
+     <loc>/Assets scanning/telnetlib端口扫描/</loc>
+     <lastmod>2018-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>/test/</loc>
-     <lastmod>2018-06-03</lastmod>
+     <loc>/Assets scanning/登录探测/</loc>
+     <lastmod>2018-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
     
 
     
         
     <url>
-     <loc>/mysql/base/</loc>
-     <lastmod>2018-06-03</lastmod>
+     <loc>/Automated task/</loc>
+     <lastmod>2018-06-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/Automated task/python/</loc>
+     <lastmod>2018-06-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
