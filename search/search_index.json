@@ -2,13 +2,13 @@
     "docs": [
         {
             "location": "/",
-            "text": "\u9996\u9875\n#",
+            "text": "Python+Django+Ansible+Playbook\u81ea\u52a8\u5316\u8fd0\u7ef4\n#\n\n\n\n\n\u4e0b\u9762\u662f\u81ea\u52a8\u5316\u8fd0\u7ef4\u7684\u6574\u4f53\u6d41\u7a0b\u56fe\uff1a",
             "title": "\u9996\u9875"
         },
         {
-            "location": "/#_1",
-            "text": "",
-            "title": "\u9996\u9875"
+            "location": "/#pythondjangoansibleplaybook",
+            "text": "\u4e0b\u9762\u662f\u81ea\u52a8\u5316\u8fd0\u7ef4\u7684\u6574\u4f53\u6d41\u7a0b\u56fe\uff1a",
+            "title": "Python+Django+Ansible+Playbook\u81ea\u52a8\u5316\u8fd0\u7ef4"
         },
         {
             "location": "/assets_scanning/nmap/",
