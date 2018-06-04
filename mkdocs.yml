@@ -1,5 +1,10 @@
 site_name: imoocc-project
 theme: readthedocs
-# pages:
-#     - Home: index.md
-#     - About: about.md
+pages:
+  -  Assets scanning:
+      - nmap存活扫描: 'Assets scanning/nmap存活扫描.md'
+      - telnetlib端口扫描: 'Assets scanning/telnetlib端口扫描.md'
+      - 登录探测: 'Assets scanning/登录探测.md'
+  - Automated task:
+      - index-1: Automated task/index.md
+      - python-1: Automated task/python.md
