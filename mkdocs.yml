@@ -1,6 +1,6 @@
 site_name: auto-operations
 
-# readthedocs
+# readthedocs   material
 theme:  material
 use_directory_urls: true
 
@@ -14,9 +14,11 @@ pages:
     - '端口探测-telnetlib': 'assets_scanning/telnetlib.md'
     - '登录探测': 'assets_scanning/login.md'
     - '主机资产信息获取': 'assets_scanning/host_asset_info.md'
+    - '网络资产信息获取': 'assets_scanning/net_assets_info.md'
+    - 'docker容器信息获取': 'assets_scanning/docker.md'
     - '总结-工程逻辑图': 'assets_scanning/zj.md'
 - 自动化任务:
-    - '自动化-1': 'automated_task/python.md'
+    - '自动化任务-ansible': 'automated_task/ansible.md'
 - 其它:
     - 'yaml文件配置和读取': 'extra/yaml_use.md'
 
