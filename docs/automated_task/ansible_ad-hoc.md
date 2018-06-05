@@ -55,8 +55,8 @@ ansible test1 -a 'ls /tmp'
 
 ## ad-hoc模式常用模块
 
-![常用的模块](常用的模块.png)
-![常用模块1](常用模块1.png)
+![常用的模块](../asset/auto_test/常用的模块.png)
+![常用模块1](../asset/auto_test/常用模块1.png)
 
 ## 场景演示
 
