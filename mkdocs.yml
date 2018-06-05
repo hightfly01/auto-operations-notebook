@@ -19,6 +19,10 @@ pages:
     - '总结-工程逻辑图': 'assets_scanning/zj.md'
 - 自动化任务:
     - '自动化任务-ansible': 'automated_task/ansible.md'
+    - 'ansible实现自动化登录': 'automated_task/ansible_login.md'
+    - 'ansible_ad-hoc模式': 'automated_task/ansible_ad-hoc.md'
+
+
 - 其它:
     - 'yaml文件配置和读取': 'extra/yaml_use.md'
 
