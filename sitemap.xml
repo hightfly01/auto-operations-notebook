@@ -36,6 +36,18 @@
     </url>
         
     <url>
+     <loc>/assets_scanning/net_assets_info/</loc>
+     <lastmod>2018-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/assets_scanning/docker/</loc>
+     <lastmod>2018-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>/assets_scanning/zj/</loc>
      <lastmod>2018-06-05</lastmod>
      <changefreq>daily</changefreq>
@@ -46,7 +58,7 @@
     
         
     <url>
-     <loc>/automated_task/python/</loc>
+     <loc>/automated_task/ansible/</loc>
      <lastmod>2018-06-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
