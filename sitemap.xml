@@ -63,6 +63,18 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/automated_task/ansible_login/</loc>
+     <lastmod>2018-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/automated_task/ansible_ad-hoc/</loc>
+     <lastmod>2018-06-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

@@ -479,6 +479,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-4ansiblecfig" title="5-4：ansible.cfig 常见配置项说明" class="md-nav__link">
+    5-4：ansible.cfig 常见配置项说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-hosts" title="5-5: hosts文件常见的配置说明" class="md-nav__link">
+    5-5: hosts文件常见的配置说明
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -492,6 +506,30 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible_login/" title="ansible实现自动化登录" class="md-nav__link">
+      ansible实现自动化登录
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible_ad-hoc/" title="ansible_ad-hoc模式" class="md-nav__link">
+      ansible_ad-hoc模式
+    </a>
   </li>
 
         
@@ -638,6 +676,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#5-4ansiblecfig" title="5-4：ansible.cfig 常见配置项说明" class="md-nav__link">
+    5-4：ansible.cfig 常见配置项说明
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-5-hosts" title="5-5: hosts文件常见的配置说明" class="md-nav__link">
+    5-5: hosts文件常见的配置说明
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -665,12 +717,12 @@
                   <h1>自动化任务-ansible</h1>
                 
                 <h2 id="1">1. 什么是自动化任务<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<p><img alt="自动化任务1" src="../自动化任务1.png" /></p>
-<p><img alt="自动化任务" src="../自动化任务.png" /></p>
+<p><img alt="自动化任务1" src="../../asset/auto_test/自动化任务1.png" /></p>
+<p><img alt="自动化任务" src="../../asset/auto_test/自动化任务.png" /></p>
 <h2 id="2">2. 自动化任务的意义<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<p><img alt="自动化任务意义" src="../自动化任务意义.png" /></p>
+<p><img alt="自动化任务意义" src="../../asset/auto_test/自动化任务意义.png" /></p>
 <h2 id="3">3. 自动化任务应用<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<p><img alt="自动化应用" src="../自动化应用.png" /></p>
+<p><img alt="自动化应用" src="../../asset/auto_test/自动化应用.png" /></p>
 <h2 id="4-ansible">4. ansible基础和安装<a class="headerlink" href="#4-ansible" title="Permanent link">#</a></h2>
 <h3 id="4-1-ansible">4-1: 什么是ansible<a class="headerlink" href="#4-1-ansible" title="Permanent link">#</a></h3>
 <blockquote>
@@ -697,7 +749,7 @@
 <blockquote>
 <p>ansible 安装成功以后，我们可以 ansible --version 版本信息。</p>
 </blockquote>
-<p><img alt="查看ansible的版本信息 " src="../查看ansible的版本信息.png" /></p>
+<p><img alt="查看ansible的版本信息 " src="../../asset/auto_test/查看ansible的版本信息.png" /></p>
 <blockquote>
 <p>第一次安装ansible时，并没有配置ansible.cfg文件，需要开发人员手动创建
 ansible.cfg文件以及设置路径</p>
@@ -737,12 +789,93 @@ ansible.cfg文件以及设置路径</p>
 
 
 <p>此时，再查看ansible的信息时， 就会出现配置的路径以及文件。</p>
-<p><img alt="ansible配置路径" src="../ansible配置路径.png" /></p>
+<p><img alt="ansible配置路径" src="../../asset/auto_test/ansible配置路径.png" /></p>
 <h3 id="5-3ansiblecfg-hosts">5-3：ansible.cfg 和 hosts 文件的作用<a class="headerlink" href="#5-3ansiblecfg-hosts" title="Permanent link">#</a></h3>
 <blockquote>
 <p>ansible.cfg: 自动化执行任务相关配置</p>
 <p>hosts: 执行任务的目标服务器的登录信息相关配置</p>
 </blockquote>
+<h3 id="5-4ansiblecfig">5-4：ansible.cfig 常见配置项说明<a class="headerlink" href="#5-4ansiblecfig" title="Permanent link">#</a></h3>
+<blockquote>
+<p>Ansible.cfg是ansible自动化任务所用的一个核心配置文件，
+大部分的配置文件都集中在defualts配置项目中。</p>
+</blockquote>
+<div class="code"><pre><span></span>1）inventory
+该参数表示资源清单inventory文件的位置，资源清单就是一些Ansible需要连接管理的主机列表
+inventory = /root/ansible/hosts
+
+2）library
+Ansible的操作动作，无论是本地或远程，都使用一小段代码来执行，这小段代码称为模块，
+这个library参数就是指向存放Ansible模块的目录 library = /usr/share/ansible
+
+3）forks
+设置默认情况下Ansible最多能有多少个进程同时工作，默认设置最多5个进程并行处理。
+具体需要设置多少个，可以根据控制主机的性能和被管理节点的数量来确定。 forks = 5
+
+4）sudo_user
+这是设置默认执行命令的用户，也可以在playbook中重新设置这个参数
+sudo_user = root //注意:新版本已经作了修改，
+如ansible2.4.1下已经为： default_sudo_user = root
+
+5）remote_port
+这是指定连接被关节点的管理端口，默认是22，除非设置了特殊的SSH端口，
+不然这个参数一般是不需要修改的 remote_port = 22
+
+6）host_key_checking
+这是设置是否检查SSH主机的密钥。可以设置为True或False
+host_key_checking = False
+
+7）timeout
+这是设置SSH连接的超时间隔，单位是秒。 timeout = 20
+
+8）log_path
+Ansible系统默认是不记录日志的，如果想把Ansible系统的输出记录到人i治稳健中，
+需要设置log_path来指定一个存储Ansible日志的文件
+log_path = /var/log/ansible.log
+
+
+9）private_key_file
+在使用ssh公钥私钥登录系统时候，使用的密钥路径。
+private_key_file=/path/to/file.pem
+</pre></div>
+
+
+<h3 id="5-5-hosts">5-5: hosts文件常见的配置说明<a class="headerlink" href="#5-5-hosts" title="Permanent link">#</a></h3>
+<p>hosts文件常见的配置方式：</p>
+<div class="code"><pre><span></span><span class="k">[group_name_1]</span>
+<span class="c1"># ssh用户 + ssh 密码</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_pass=&#39;ywf&#39;</span>
+
+<span class="k">[group_name_2]</span>
+<span class="c1"># ssh用户+ssh密钥</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf</span>
+<span class="na">ansible_ssh_private_key_file</span><span class="o">=</span><span class="s">&#39;/Users/fly/.ssh/id_rsa&#39;</span>
+
+<span class="k">[group_name_3]</span>
+<span class="c1"># 别名 + ssh用户+ssh密钥</span>
+<span class="na">test1 ansible_ssh_host</span><span class="o">=</span><span class="s">192.168.199.214 ansible_ssh_port=22</span>
+<span class="na">ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_private_key_file=&#39;/Users/fly/.ssh/id_rsa&#39;</span>
+</pre></div>
+
+
+<p>实例演示：</p>
+<div class="code"><pre><span></span><span class="k">[test_group1]</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_pass=&#39;ywf&#39;</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_pass=&#39;ywf&#39;</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_pass=&#39;ywf&#39;</span>
+
+<span class="k">[test_group2]</span>
+<span class="na">192.168.199.214 ansible_ssh_user</span><span class="o">=</span><span class="s">ywf ansible_ssh_pass=&#39;ywf&#39;</span>
+</pre></div>
+
+
+<p>通过ansible命令，查看hosts配置清单</p>
+<div class="code"><pre><span></span># 查询所有分组配置信息
+ansible all --list-hosts
+
+# 指定组名配置信息
+ansible test_group1 --list-hosts
+</pre></div>
                 
                   
                 
@@ -778,13 +911,13 @@ ansible.cfg文件以及设置路径</p>
           </a>
         
         
-          <a href="../../extra/yaml_use/" title="yaml文件配置和读取" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../ansible_login/" title="ansible实现自动化登录" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                yaml文件配置和读取
+                ansible实现自动化登录
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
