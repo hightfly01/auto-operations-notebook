@@ -1,0 +1,1444 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
+    
+    
+      
+        <title>ansible_playbook模式 - auto-operations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#playbook" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="auto-operations" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                auto-operations
+              </span>
+              <span class="md-header-nav__topic">
+                ansible_playbook模式
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/hightfly01/imoocc-notebook/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    auto-operations
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/hightfly01/imoocc-notebook/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="首页" class="md-nav__link">
+      首页
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      资产探测
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        资产探测
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/nmap/" title="资产探测-nmap" class="md-nav__link">
+      资产探测-nmap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/telnetlib/" title="端口探测-telnetlib" class="md-nav__link">
+      端口探测-telnetlib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/login/" title="登录探测" class="md-nav__link">
+      登录探测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/host_asset_info/" title="主机资产信息获取" class="md-nav__link">
+      主机资产信息获取
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/net_assets_info/" title="网络资产信息获取" class="md-nav__link">
+      网络资产信息获取
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/docker/" title="docker容器信息获取" class="md-nav__link">
+      docker容器信息获取
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../assets_scanning/zj/" title="总结-工程逻辑图" class="md-nav__link">
+      总结-工程逻辑图
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      自动化任务
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        自动化任务
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible/" title="自动化任务-ansible" class="md-nav__link">
+      自动化任务-ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible_login/" title="ansible实现自动化登录" class="md-nav__link">
+      ansible实现自动化登录
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ansible_ad-hoc/" title="ansible_ad-hoc模式" class="md-nav__link">
+      ansible_ad-hoc模式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        ansible_playbook模式
+      </label>
+    
+    <a href="./" title="ansible_playbook模式" class="md-nav__link md-nav__link--active">
+      ansible_playbook模式
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#playbook" title="什么是playbook及组成" class="md-nav__link">
+    什么是playbook及组成
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="定义" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="组成" class="md-nav__link">
+    组成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbook_1" title="playbook的优势" class="md-nav__link">
+    playbook的优势
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbook_2" title="playbook的配置语法" class="md-nav__link">
+    playbook的配置语法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 基本使用（执行命令）" class="md-nav__link">
+    1. 基本使用（执行命令）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2yaml" title="2.剧本中yaml文件配置和执行" class="md-nav__link">
+    2.剧本中yaml文件配置和执行
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yaml" title="yaml文件配置：" class="md-nav__link">
+    yaml文件配置：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playbook_3" title="playbook执行：" class="md-nav__link">
+    playbook执行：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="剧本中变量的定义" class="md-nav__link">
+    剧本中变量的定义
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-yaml" title="1. yaml文件中定义变量赋值" class="md-nav__link">
+    1. yaml文件中定义变量赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-extra-vars" title="2. --extra-vars执行参数赋值给变量" class="md-nav__link">
+    2. --extra-vars执行参数赋值给变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 注册变量" class="md-nav__link">
+    3. 注册变量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="剧本中条件判断" class="md-nav__link">
+    剧本中条件判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="剧本中循环语句" class="md-nav__link">
+    剧本中循环语句
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="循环语句类型分类" class="md-nav__link">
+    循环语句类型分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="标准循环" class="md-nav__link">
+    标准循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="遍历字典" class="md-nav__link">
+    遍历字典
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="遍历目录文件" class="md-nav__link">
+    遍历目录文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="剧本中条件和循环结合语句" class="md-nav__link">
+    剧本中条件和循环结合语句
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="剧本中异常处理" class="md-nav__link">
+    剧本中异常处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="忽略错误" class="md-nav__link">
+    忽略错误
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="自定义错误" class="md-nav__link">
+    自定义错误
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" title="剧本中include用法" class="md-nav__link">
+    剧本中include用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="定义roles剧本" class="md-nav__link">
+    定义roles剧本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roles_1" title="什么是roles" class="md-nav__link">
+    什么是roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_2" title="为什么需要用到roles" class="md-nav__link">
+    为什么需要用到roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_3" title="剧本roles 设计思路" class="md-nav__link">
+    剧本roles 设计思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_4" title="官方网站的建议roles剧本结构如下：" class="md-nav__link">
+    官方网站的建议roles剧本结构如下：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rolesnginx" title="roles演示部署服务(nginx)" class="md-nav__link">
+    roles演示部署服务(nginx)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      其它
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        其它
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../extra/yaml_use/" title="yaml文件配置和读取" class="md-nav__link">
+      yaml文件配置和读取
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#playbook" title="什么是playbook及组成" class="md-nav__link">
+    什么是playbook及组成
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="定义" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="组成" class="md-nav__link">
+    组成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbook_1" title="playbook的优势" class="md-nav__link">
+    playbook的优势
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#playbook_2" title="playbook的配置语法" class="md-nav__link">
+    playbook的配置语法
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" title="1. 基本使用（执行命令）" class="md-nav__link">
+    1. 基本使用（执行命令）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2yaml" title="2.剧本中yaml文件配置和执行" class="md-nav__link">
+    2.剧本中yaml文件配置和执行
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yaml" title="yaml文件配置：" class="md-nav__link">
+    yaml文件配置：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playbook_3" title="playbook执行：" class="md-nav__link">
+    playbook执行：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="剧本中变量的定义" class="md-nav__link">
+    剧本中变量的定义
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-yaml" title="1. yaml文件中定义变量赋值" class="md-nav__link">
+    1. yaml文件中定义变量赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-extra-vars" title="2. --extra-vars执行参数赋值给变量" class="md-nav__link">
+    2. --extra-vars执行参数赋值给变量
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3. 注册变量" class="md-nav__link">
+    3. 注册变量
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="剧本中条件判断" class="md-nav__link">
+    剧本中条件判断
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="剧本中循环语句" class="md-nav__link">
+    剧本中循环语句
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="循环语句类型分类" class="md-nav__link">
+    循环语句类型分类
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="标准循环" class="md-nav__link">
+    标准循环
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="遍历字典" class="md-nav__link">
+    遍历字典
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" title="遍历目录文件" class="md-nav__link">
+    遍历目录文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" title="剧本中条件和循环结合语句" class="md-nav__link">
+    剧本中条件和循环结合语句
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" title="剧本中异常处理" class="md-nav__link">
+    剧本中异常处理
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" title="忽略错误" class="md-nav__link">
+    忽略错误
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" title="自定义错误" class="md-nav__link">
+    自定义错误
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" title="剧本中include用法" class="md-nav__link">
+    剧本中include用法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="定义roles剧本" class="md-nav__link">
+    定义roles剧本
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roles_1" title="什么是roles" class="md-nav__link">
+    什么是roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_2" title="为什么需要用到roles" class="md-nav__link">
+    为什么需要用到roles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_3" title="剧本roles 设计思路" class="md-nav__link">
+    剧本roles 设计思路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roles_4" title="官方网站的建议roles剧本结构如下：" class="md-nav__link">
+    官方网站的建议roles剧本结构如下：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rolesnginx" title="roles演示部署服务(nginx)" class="md-nav__link">
+    roles演示部署服务(nginx)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/hightfly01/imoocc-notebook/edit/master/docs/automated_task/ansible_playbook.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>ansible_playbook模式</h1>
+                
+                <h2 id="playbook">什么是playbook及组成<a class="headerlink" href="#playbook" title="Permanent link">#</a></h2>
+<h3 id="_1">定义<a class="headerlink" href="#_1" title="Permanent link">#</a></h3>
+<blockquote>
+<p>playbook: 翻译过来就是‘剧本’</p>
+</blockquote>
+<h3 id="_2">组成<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<blockquote>
+<p>play： 定义的是主机的角色</p>
+<p>task: 定义的是具体执行的任务</p>
+<p>playbook： 有一个或者多个play组成，一个play可以包含多个task</p>
+</blockquote>
+<p><img alt="playbook组成结构" src="../../asset/auto_test/playbook组成结构.png" /></p>
+<h2 id="playbook_1">playbook的优势<a class="headerlink" href="#playbook_1" title="Permanent link">#</a></h2>
+<blockquote>
+<p>功能比adhoc模式更全</p>
+<p>控制好依赖</p>
+<p>展示更直观</p>
+<p>持久使用</p>
+</blockquote>
+<h2 id="playbook_2">playbook的配置语法<a class="headerlink" href="#playbook_2" title="Permanent link">#</a></h2>
+<h3 id="1">1. 基本使用（执行命令）<a class="headerlink" href="#1" title="Permanent link">#</a></h3>
+<p>执行命令方式:</p>
+<blockquote>
+<p>ansible-playbook playbook.yml [options]</p>
+</blockquote>
+<p>options参数说明：</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">-u REMOTE_USER, --user=REMOTE_USER</td>
+<td align="left">ssh 连接的用户名</td>
+</tr>
+<tr>
+<td align="left">-k, --ask-pass</td>
+<td align="left">ssh登录认证密码</td>
+</tr>
+<tr>
+<td align="left">-s, --sudo</td>
+<td align="left">＃sudo 到root用户，相当于Linux系统下的sudo命令 -U SUDO_USER, --sudo-user=SUDO_USER ＃sudo 到对应的用户</td>
+</tr>
+<tr>
+<td align="left">-K, --ask-sudo-pass</td>
+<td align="left">＃用户的密码（—sudo时使用）</td>
+</tr>
+<tr>
+<td align="left">-T TIMEOUT, --timeout=TIMEOUT</td>
+<td align="left">＃ ssh 连接超时，默认 10 秒</td>
+</tr>
+<tr>
+<td align="left">-C, --check</td>
+<td align="left">＃ 指定该参数后，执行 playbook 文件不会真正去执行，而是模拟执行一遍，然后输出本次执行会对远程主机造成的修改</td>
+</tr>
+<tr>
+<td align="left">-e EXTRA_VARS, --extra-vars=EXTRA_VARS</td>
+<td align="left">＃ 设置额外的变量如：key=value 形式 或者 YAML or JSON，以空格分隔变量，或用多个-e</td>
+</tr>
+<tr>
+<td align="left">-f FORKS, --forks=FORKS</td>
+<td align="left">＃ 进程并发处理，默认 5</td>
+</tr>
+<tr>
+<td align="left">-i INVENTORY, --inventory-file=INVENTORY</td>
+<td align="left">＃ 指定 hosts 文件路径，默认 default=/etc/ansible/hosts</td>
+</tr>
+<tr>
+<td align="left">-l SUBSET, --limit=SUBSET</td>
+<td align="left">＃ 指定一个 pattern，对- hosts:匹配到的主机再过滤一次</td>
+</tr>
+<tr>
+<td align="left">--list-hosts</td>
+<td align="left">＃ 只打印有哪些主机会执行这个 playbook 文件，不是实际执行该 playbook</td>
+</tr>
+<tr>
+<td align="left">--list-tasks</td>
+<td align="left">＃ 列出该 playbook 中会被执行的 task</td>
+</tr>
+<tr>
+<td align="left">--private-key=PRIVATE_KEY_FILE</td>
+<td align="left">＃ 私钥路径</td>
+</tr>
+<tr>
+<td align="left">--step</td>
+<td align="left">＃ 同一时间只执行一个 task，每个 task 执行前都会提示确认一遍</td>
+</tr>
+<tr>
+<td align="left">--syntax-check</td>
+<td align="left">＃ 只检测 playbook 文件语法是否有问题，不会执行该 playbook</td>
+</tr>
+<tr>
+<td align="left">-t TAGS, --tags=TAGS</td>
+<td align="left">＃当 play 和 task 的 tag 为该参数指定的值时才执行，多个 tag 以逗号分隔</td>
+</tr>
+<tr>
+<td align="left">--skip-tags=SKIP_TAGS</td>
+<td align="left">＃ 当 play 和 task 的 tag 不匹配该参数指定的值时，才执行</td>
+</tr>
+<tr>
+<td align="left">-v, --verbose</td>
+<td align="left">＃输出更详细的执行过程信息，-vvv可得到所有执行过程信息。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2yaml">2.剧本中yaml文件配置和执行<a class="headerlink" href="#2yaml" title="Permanent link">#</a></h3>
+<h4 id="yaml">yaml文件配置：<a class="headerlink" href="#yaml" title="Permanent link">#</a></h4>
+<div class="code"><pre><span></span><span class="x">---</span>
+<span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  vars :</span>
+<span class="x">     touch_file : test.file</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name : touch file</span>
+<span class="x">        shell : &#39;touch /tmp/</span><span class="cp">{{</span><span class="nv">touch_file</span><span class="cp">}}</span><span class="x">&#39;</span>
+</pre></div>
+
+
+<h4 id="playbook_3">playbook执行：<a class="headerlink" href="#playbook_3" title="Permanent link">#</a></h4>
+<div class="code"><pre><span></span>ansible-playbook -i /etc/ansible/hosts --list-hosts ./f1.yml
+
+ansible-playbook ./f1.yml
+</pre></div>
+
+
+<h2 id="_3">剧本中变量的定义<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h3 id="1-yaml">1. yaml文件中定义变量赋值<a class="headerlink" href="#1-yaml" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span><span class="x">---</span>
+<span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  vars : # 文件中通过vars定义变量</span>
+<span class="x">     touch_file : test.file</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name : touch file</span>
+<span class="x">        shell : &#39;touch /tmp/</span><span class="cp">{{</span><span class="nv">touch_file</span><span class="cp">}}</span><span class="x">&#39;</span>
+</pre></div>
+
+
+<h3 id="2-extra-vars">2. --extra-vars执行参数赋值给变量<a class="headerlink" href="#2-extra-vars" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span> ansible-playbook ./f1.yml --extra-vars &#39;touch_file=jeson2&#39;
+</pre></div>
+
+
+<h3 id="3">3. 注册变量<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
+<blockquote>
+<p>register 关键字可以存储指定命令的输出结果到一个自定义的变量中</p>
+</blockquote>
+<p>格式：</p>
+<div class="code"><pre><span></span>- name: get time
+  command: date  # 通过date输出时间
+  register: date_output  # 通过register来获取并记录date输出的时间
+</pre></div>
+
+
+<p>案例演示：</p>
+<p>剧本的配置：</p>
+<div class="code"><pre><span></span><span class="x">---</span>
+<span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  vars :</span>
+<span class="x">     touch_file : imoocc.file</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name : get date</span>
+<span class="x">        command : date</span>
+<span class="x">        register : date_output</span>
+<span class="x">      - name : touch file</span>
+<span class="x">        shell : &#39;touch /tmp/</span><span class="cp">{{</span><span class="nv">touch_file</span><span class="cp">}}</span><span class="x">&#39;</span>
+<span class="x">      - name : echo date_output</span>
+<span class="x">        shell : &#39;echo </span><span class="cp">{{</span><span class="nv">date_output.stdout</span><span class="cp">}}</span><span class="x"> &gt; /tmp/</span><span class="cp">{{</span><span class="nv">touch_file</span><span class="cp">}}</span><span class="x">&#39;</span>
+</pre></div>
+
+
+<p>剧本执行：</p>
+<div class="code"><pre><span></span>ansible-playbook ./f2.yml
+</pre></div>
+
+
+<h2 id="_4">剧本中条件判断<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<blockquote>
+<p>条件判断语句 <code>when</code> 语句</p>
+</blockquote>
+<p>使用演练：</p>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  vars :</span>
+<span class="x">     touch_file : id_rsa</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name : touch flag  file</span>
+<span class="x">        command : &#39;touch /tmp/this_is_</span><span class="cp">{{</span><span class="nv">ansible_distribution</span><span class="cp">}}</span><span class="x">_system&#39;</span>
+<span class="x">        when : ansible_distribution == &#39;CentOS&#39;</span>
+</pre></div>
+
+
+<h2 id="_5">剧本中循环语句<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
+<h3 id="_6">循环语句类型分类<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
+<p><img alt="循环语句类型" src="../../asset/auto_test/循环语句类型.png" /></p>
+<h3 id="_7">标准循环<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name: add serveral users</span>
+<span class="x">        user: name=</span><span class="cp">{{</span> <span class="nv">item.name</span> <span class="cp">}}</span><span class="x"> state=present groups=</span><span class="cp">{{</span> <span class="nv">item.groups</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        with_items:</span>
+<span class="x">            - { name: &#39;testuser1&#39;, groups: &#39;ywf&#39; }</span>
+<span class="x">            - { name: &#39;testuser2&#39;, groups: &#39;ywf&#39; }</span>
+</pre></div>
+
+
+<h3 id="_8">遍历字典<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name: add serveral users</span>
+<span class="x">        user: name=</span><span class="cp">{{</span> <span class="nv">item.key</span> <span class="cp">}}</span><span class="x"> state=present groups=</span><span class="cp">{{</span> <span class="nv">item.value</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        with_items:</span>
+<span class="x">            - { &#39;testuser3&#39;: &#39;wheel&#39;, &#39;testuser4&#39; : &#39;wheel&#39;}</span>
+</pre></div>
+
+
+<h3 id="_9">遍历目录文件<a class="headerlink" href="#_9" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name: copy files</span>
+<span class="x">        copy: src=</span><span class="cp">{{</span> <span class="nv">item</span> <span class="cp">}}</span><span class="x"> dest=/tmp/bb owner=ywf mode=600</span>
+<span class="x">        with_fileglob:</span>
+<span class="x">          - aa/*</span>
+</pre></div>
+
+
+<h2 id="_10">剧本中条件和循环结合语句<a class="headerlink" href="#_10" title="Permanent link">#</a></h2>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name: winner</span>
+<span class="x">        debug: msg=&#39;</span><span class="cp">{{</span><span class="nv">item.key</span><span class="cp">}}</span><span class="x"> is the winner </span><span class="cp">{{</span><span class="nv">item.value</span><span class="cp">}}</span><span class="x">&#39;</span>
+<span class="x">        with_dict:</span>
+<span class="x">            - {&#39;test&#39;: {&#39;englist&#39; : 60}}</span>
+<span class="x">            - {&#39;test1&#39;: {&#39;englist&#39; : 80}}</span>
+
+<span class="x">        when : item.value.englist &gt; 60</span>
+</pre></div>
+
+
+<h2 id="_11">剧本中异常处理<a class="headerlink" href="#_11" title="Permanent link">#</a></h2>
+<h3 id="_12">忽略错误<a class="headerlink" href="#_12" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span>- hosts : 192.168.199.214
+  remote_user : ywf
+  tasks :
+      - name: ignore false
+        command: /bin/false
+        ignore_errors: yes # 忽略错误，进行往下执行
+</pre></div>
+
+
+<h3 id="_13">自定义错误<a class="headerlink" href="#_13" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span><span class="x">- hosts : 192.168.199.214</span>
+<span class="x">  remote_user : ywf</span>
+<span class="x">  vars:</span>
+<span class="x">  tasks :</span>
+<span class="x">      - name: get process</span>
+<span class="x">        shell: ps -ef|wc -l</span>
+<span class="x">        register: process_count</span>
+<span class="x">        failed_when: &quot;&#39;FAILED&#39; in process_count &gt; 3&quot;</span>
+<span class="x">      - name: echo errors</span>
+<span class="x">        debug: msg=&#39;</span><span class="cp">{{</span> <span class="nv">process_count</span> <span class="cp">}}</span><span class="x">&#39;</span>
+</pre></div>
+
+
+<h2 id="include">剧本中include用法<a class="headerlink" href="#include" title="Permanent link">#</a></h2>
+<blockquote>
+<p>include 用法：</p>
+<p>include_tasks/include:动态的包含tasks任务列表执行</p>
+</blockquote>
+<p><img alt="include动态包含tasks" src="../../asset/auto_test/include动态包含tasks.png" /></p>
+<div class="code"><pre><span></span>- hosts : 192.168.199.214
+  remote_user : ywf
+  vars:
+  tasks :
+     - include_tasks: touchf1.yml
+     - include_tasks: touchf2.yml
+</pre></div>
+
+
+<h2 id="roles">定义roles剧本<a class="headerlink" href="#roles" title="Permanent link">#</a></h2>
+<h3 id="roles_1">什么是roles<a class="headerlink" href="#roles_1" title="Permanent link">#</a></h3>
+<blockquote>
+<p>是一种利用在大型playbook中的剧本配置模式，有这自己特定结构</p>
+</blockquote>
+<h3 id="roles_2">为什么需要用到roles<a class="headerlink" href="#roles_2" title="Permanent link">#</a></h3>
+<blockquote>
+<p>和面向对象开发思想相似</p>
+<p>利用大型的项目任务中，尽可能的将公共的任务，变量等内容独立
+</p>
+</blockquote>
+<h3 id="roles_3">剧本roles 设计思路<a class="headerlink" href="#roles_3" title="Permanent link">#</a></h3>
+<p>ansible<img alt="剧本roles设计思路" src="../../asset/auto_test/剧本roles设计思路.png" /></p>
+<h3 id="roles_4">官方网站的建议roles剧本结构如下：<a class="headerlink" href="#roles_4" title="Permanent link">#</a></h3>
+<div class="code"><pre><span></span>production # 正式环境的inventory文件
+staging #测试环境用得inventory文件
+group_vars/ # 机器组的变量文件
+     group1
+     group2
+host_vars/ #执行机器成员的变量
+     hostname1
+     hostname2
+
+webservers.yml
+
+roles/
+    webservers/
+          tasks/
+              main.yml
+          handlers/
+              main.yml
+          vars/
+              main.yml
+    common/
+        tasks/
+           main.yml
+        handlers/
+           main.yml
+        vars/
+            main.yml
+</pre></div>
+
+
+<h2 id="rolesnginx">roles演示部署服务(nginx)<a class="headerlink" href="#rolesnginx" title="Permanent link">#</a></h2>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ansible_ad-hoc/" title="ansible_ad-hoc模式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ansible_ad-hoc模式
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../extra/yaml_use/" title="yaml文件配置和读取" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                yaml文件配置和读取
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright (c) 2018 hightfly
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>

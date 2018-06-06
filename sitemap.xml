@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,43 +13,43 @@
         
     <url>
      <loc>/assets_scanning/nmap/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/telnetlib/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/login/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/host_asset_info/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/net_assets_info/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/docker/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/assets_scanning/zj/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -59,19 +59,25 @@
         
     <url>
      <loc>/automated_task/ansible/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/automated_task/ansible_login/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/automated_task/ansible_ad-hoc/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/automated_task/ansible_playbook/</loc>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -81,7 +87,7 @@
         
     <url>
      <loc>/extra/yaml_use/</loc>
-     <lastmod>2018-06-05</lastmod>
+     <lastmod>2018-06-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

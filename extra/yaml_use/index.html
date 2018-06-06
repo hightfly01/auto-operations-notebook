@@ -401,6 +401,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../automated_task/ansible_playbook/" title="ansible_playbook模式" class="md-nav__link">
+      ansible_playbook模式
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -467,6 +479,33 @@
     python环境下使用yaml模块
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-yaml" title="1-1 安装yaml模块" class="md-nav__link">
+    1-1 安装yaml模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-yaml" title="2-1 yaml文件配置" class="md-nav__link">
+    2-1 yaml文件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-1-yaml" title="3-1 读取yaml文件内容" class="md-nav__link">
+    3-1 读取yaml文件内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -515,6 +554,33 @@
     python环境下使用yaml模块
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-1-yaml" title="1-1 安装yaml模块" class="md-nav__link">
+    1-1 安装yaml模块
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-1-yaml" title="2-1 yaml文件配置" class="md-nav__link">
+    2-1 yaml文件配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-1-yaml" title="3-1 读取yaml文件内容" class="md-nav__link">
+    3-1 读取yaml文件内容
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -544,24 +610,35 @@
 <li>由于易于被解析，应用工程的工作成效读取的配置文件</li>
 </ul>
 <h3 id="pythonyaml">python环境下使用yaml模块<a class="headerlink" href="#pythonyaml" title="Permanent link">#</a></h3>
-<p>1-1 安装yaml模块</p>
+<h4 id="1-1-yaml">1-1 安装yaml模块<a class="headerlink" href="#1-1-yaml" title="Permanent link">#</a></h4>
 <div class="code"><pre><span></span>    pip install PyYAML
 </pre></div>
 
 
-<p>2-1 yaml文件配置</p>
-<p>配置格式：</p>
-<div class="code"><pre><span></span><span class="n">hostsinfo</span> <span class="o">:</span>
-        <span class="n">nets</span> <span class="o">:</span> <span class="o">[</span><span class="s1">&#39;192.168.1&#39;</span><span class="o">]</span>
-        <span class="n">ports</span> <span class="o">:</span> <span class="s2">&quot;22,222,2222,22222,2222&quot;</span>
-        <span class="n">ssh_key_file</span> <span class="o">:</span> <span class="o">[</span><span class="s1">&#39;/opt/key/first_rsa&#39;</span><span class="o">,</span><span class="s1">&#39;/opt/key/senncond_rsa&#39;</span><span class="o">,</span><span class="s1">&#39;/opt/key/third_rsa&#39;</span><span class="o">]</span>
-        <span class="n">syscmd_list</span> <span class="o">:</span> <span class="o">[</span><span class="s2">&quot;cat /etc/issue&quot;</span><span class="o">,</span> <span class="s2">&quot;cat /etc/redhat-release&quot;</span><span class="o">]</span>
+<h4 id="2-1-yaml">2-1 yaml文件配置<a class="headerlink" href="#2-1-yaml" title="Permanent link">#</a></h4>
+<p>配置格式要求：</p>
+<blockquote>
+<p>大小写敏感</p>
+<p>使用缩进表示层级关系（只能使用空格，不能使用tab）</p>
+<p>yaml文件以 ‘---’作为文档的开始</p>
+</blockquote>
+<p>支持的数据结构</p>
+<p><img alt="数据结构" src="../数据结构.png" /></p>
+<p>yaml变量的应用</p>
+<p><img alt="yaml变量的应用" src="../yaml变量的应用.png" /></p>
+<p>实例：</p>
+<div class="code"><pre><span></span>---
+hostsinfo :
+        nets : [&#39;192.168.1&#39;]
+        ports : &quot;22,222,2222,22222,2222&quot;
+        ssh_key_file : [&#39;/opt/key/first_rsa&#39;,&#39;/opt/key/senncond_rsa&#39;,&#39;/opt/key/third_rsa&#39;]
+        syscmd_list : [&quot;cat /etc/issue&quot;, &quot;cat /etc/redhat-release&quot;]
 
-<span class="n">ansible_log</span> <span class="o">:</span>
-            <span class="n">adhoc_format</span> <span class="o">:</span>
-                          <span class="mi">10008</span> <span class="o">:</span> <span class="s2">&quot;shell传入模块有问题！&quot;</span>
-                          <span class="mi">10000</span> <span class="o">:</span> <span class="s2">&quot;任务已接收，准备检验中...&quot;</span>
-                          <span class="mi">10002</span> <span class="o">:</span> <span class="s2">&quot;查找到匹配机器的登录信息,准备检查任务中..&quot;</span>
+ansible_log :
+            adhoc_format :
+                          10008 : &quot;shell传入模块有问题！&quot;
+                          10000 : &quot;任务已接收，准备检验中...&quot;
+                          10002 : &quot;查找到匹配机器的登录信息,准备检查任务中..&quot;
 </pre></div>
 
 
@@ -570,7 +647,7 @@
 </pre></div>
 
 
-<p>3-1 读取yaml文件内容</p>
+<h4 id="3-1-yaml">3-1 读取yaml文件内容<a class="headerlink" href="#3-1-yaml" title="Permanent link">#</a></h4>
 <div class="code"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">12</span><span class="p">]:</span> <span class="kn">import</span> <span class="nn">yaml</span>
 
 <span class="n">In</span> <span class="p">[</span><span class="mi">13</span><span class="p">]:</span> <span class="n">y</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;config.yaml&#39;</span><span class="p">))</span>
@@ -600,7 +677,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../automated_task/ansible_ad-hoc/" title="ansible_ad-hoc模式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../automated_task/ansible_playbook/" title="ansible_playbook模式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -609,7 +686,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                ansible_ad-hoc模式
+                ansible_playbook模式
               </span>
             </div>
           </a>
