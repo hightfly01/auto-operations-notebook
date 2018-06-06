@@ -81,6 +81,12 @@
      <changefreq>daily</changefreq>
     </url>
         
+    <url>
+     <loc>/automated_task/ansible-python/</loc>
+     <lastmod>2018-06-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
