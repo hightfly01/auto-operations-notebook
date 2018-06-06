@@ -21,6 +21,8 @@ pages:
     - '自动化任务-ansible': 'automated_task/ansible.md'
     - 'ansible实现自动化登录': 'automated_task/ansible_login.md'
     - 'ansible_ad-hoc模式': 'automated_task/ansible_ad-hoc.md'
+    - 'ansible_playbook模式': 'automated_task/ansible_playbook.md'
+
 
 
 - 其它:
