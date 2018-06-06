@@ -22,8 +22,7 @@ pages:
     - 'ansible实现自动化登录': 'automated_task/ansible_login.md'
     - 'ansible_ad-hoc模式': 'automated_task/ansible_ad-hoc.md'
     - 'ansible_playbook模式': 'automated_task/ansible_playbook.md'
-
-
+    - 'python中使用ansible模块': 'automated_task/ansible-python.md'
 
 - 其它:
     - 'yaml文件配置和读取': 'extra/yaml_use.md'
