@@ -324,10 +324,14 @@ class PlayBookResultsCollector(CallbackBase):
 
 ```
 self.callback = PlayBookResultsCollector()
-           if extra_vars:self.variable_manager.extra_vars = extra_vars
-           executor = PlaybookExecutor(
-               playbooks=[playbook_path], inventory=self.inventory, variable_manager=self.variable_manager, loader=self.loader,
-               options=self.options, passwords=self.passwords,
+
+executor = PlaybookExecutor(
+          playbooks=[playbook_path],
+          inventory=self.inventory, variable_manager=self.variable_manager,
+          loader=self.loader,
+          options=self.options,
+          passwords=self.passwords,
            )
-           executor._tqm._stdout_callback = self.callback
+executor._tqm._stdout_callback = self.callback
+
 ```
